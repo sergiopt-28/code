@@ -52,13 +52,12 @@ public class TicTacToe {
 			} else
 				break;
 		}
+		
 //		CERRAR SCANER AL FINALIZAR PROGRAMA
 		scanner.close();
-
 	}
 
 	public static void limpiarConsola() {
-
 		try {
 			if (System.getProperty("os.name").toLowerCase().contains("win")) {
 				// COMANDO PARA WINDOWS
@@ -92,9 +91,7 @@ public class TicTacToe {
 		try {
 			numeroMovimiento = scanner.nextInt();
 		} catch (InputMismatchException e) {
-			/*
-			 * SI NO SE ESCRIBE UN NÚMERO REINICIA CACHE DE SCANNER
-			 */
+			 // SI NO SE ESCRIBE UN NÚMERO REINICIA CACHE DE SCANNER
 			scanner.nextLine();
 		}
 
@@ -115,7 +112,6 @@ public class TicTacToe {
 	}
 
 	public static void imprimirTablero(boolean[][] tableroJugadorX, boolean[][] tableroJugadorO) {
-
 //		IMPRIMIR TABLERO
 		for (int f = 0; f < tableroJugadorX.length; f++) {
 //			IMPRIMIR BORDES
@@ -134,15 +130,12 @@ public class TicTacToe {
 			}
 
 			System.out.print("|");
-
 		}
 
 		System.out.println(System.lineSeparator() + "+---+---+---+");
-
 	}
 
 	public static String terminarJuego(boolean[][] tableroJugadorX, boolean[][] tableroJugadorO) {
-
 //		TERMINAR JUEGO PORQUE TODAS LAS POSICIONES ESTÁN OCUPADAS
 		boolean empatar = false;
 		int contadorDeCasillas = 0;
@@ -228,9 +221,7 @@ public class TicTacToe {
 	}
 
 	public static void bucleDeJuego(Scanner scanner, boolean[][] tableroJugadorX, boolean[][] tableroJugadorO) {
-
 		while (true) {
-
 			// LIMPIAR SALIDA Y IMPRIMIR TABLERO
 			limpiarConsola();
 			imprimirTablero(tableroJugadorX, tableroJugadorO);
