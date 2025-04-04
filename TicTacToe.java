@@ -222,43 +222,41 @@ public class TicTacToe {
 
 	public static void bucleDeJuego(Scanner scanner, boolean[][] tableroJugadorX, boolean[][] tableroJugadorO) {
 		while (true) {
-			// LIMPIAR SALIDA Y IMPRIMIR TABLERO
+//			LIMPIAR SALIDA Y IMPRIMIR TABLERO
 			limpiarConsola();
 			imprimirTablero(tableroJugadorX, tableroJugadorO);
 
-			// PEDIR SCANNER X
+//			PEDIR SCANNER X
 			System.out.print(System.lineSeparator() + "Introduce un movimiento jugador X: ");
 			int movimientoX = 0;
 
 			try {
 				movimientoX = scanner.nextInt();
 
-			} catch (InputMismatchException e) {
-				/*
-				 * SI NO SE ESCRIBE UN NÚMERO REINICIA CACHE DE SCANNER
-				 */
+			} catch (InputMismatchException e) {			
+//				 SI NO SE ESCRIBE UN NÚMERO REINICIA CACHE DE SCANNER				
 				scanner.nextLine();
 			}
 
-			// FUNCION REALIZAR MOVIMIENTO
+//			FUNCION REALIZAR MOVIMIENTO
 			movimientoX = comprobarMovimiento(scanner, tableroJugadorX, tableroJugadorO, movimientoX);
 			realizarMovimiento(tableroJugadorX, tableroJugadorO, 'x', movimientoX);
 
-			// COMPROBAR SI SE HA TERMINADO EL JUEGO
+//			COMPROBAR SI SE HA TERMINADO EL JUEGO
 			if (!(terminarJuego(tableroJugadorX, tableroJugadorO).equals("Siguiente turno :)"))) {
-				// IMPRIME EL MENSAJE DE QUE EL JUEGO SE HA TERMINADO
+//				IMPRIME EL MENSAJE DE QUE EL JUEGO SE HA TERMINADO
 				limpiarConsola();
 				imprimirTablero(tableroJugadorX, tableroJugadorO);
 				System.out.println(terminarJuego(tableroJugadorX, tableroJugadorO) + System.lineSeparator());
-				// ROMPER BUCLE
+//				ROMPER BUCLE
 				break;
 			}
 
-			// LIMPIAR SALIDA Y IMPRIMIR TABLERO
+//			LIMPIAR SALIDA Y IMPRIMIR TABLERO
 			limpiarConsola();
 			imprimirTablero(tableroJugadorX, tableroJugadorO);
 
-			// PEDIR SCANNER O
+//			PEDIR SCANNER O
 			System.out.print(System.lineSeparator() + "Introduce un movimiento jugador O: ");
 			int movimientoO = 0;
 
@@ -266,23 +264,21 @@ public class TicTacToe {
 				movimientoO = scanner.nextInt();
 
 			} catch (InputMismatchException e) {
-				/*
-				 * SI NO SE ESCRIBE UN NÚMERO REINICIA CACHE DE SCANNER
-				 */
+//				 SI NO SE ESCRIBE UN NÚMERO REINICIA CACHE DE SCANNER
 				scanner.nextLine();
 			}
 
-			// FUNCION REALIZAR MOVIMIENTO
+//			FUNCION REALIZAR MOVIMIENTO
 			movimientoO = comprobarMovimiento(scanner, tableroJugadorX, tableroJugadorO, movimientoO);
 			realizarMovimiento(tableroJugadorX, tableroJugadorO, 'o', movimientoO);
 
-			// COMPROBAR SI SE HA TERMINADO EL JUEGO
+//			COMPROBAR SI SE HA TERMINADO EL JUEGO
 			if (!(terminarJuego(tableroJugadorX, tableroJugadorO).equals("Siguiente turno :)"))) {
-				// IMPRIME EL MENSAJE DE QUE EL JUEGO SE HA TERMINADO
+//				IMPRIME EL MENSAJE DE QUE EL JUEGO SE HA TERMINADO
 				limpiarConsola();
 				imprimirTablero(tableroJugadorX, tableroJugadorO);
 				System.out.println(terminarJuego(tableroJugadorX, tableroJugadorO) + System.lineSeparator());
-				// ROMPER BUCLE
+//				ROMPER BUCLE
 				break;
 			}
 
